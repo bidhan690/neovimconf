@@ -3,6 +3,7 @@ local overrides = require "custom.configs.overrides"
 local plugins = {
   {
     "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
     event = "InsertEnter",
     opts = overrides.copilot,
   },
@@ -60,12 +61,22 @@ local plugins = {
         "tailwindcss-language-server",
         "typescript-language-server",
         "prisma-language-server",
+        "gopls",
+        "golines",
+        "goimports",
       },
     },
   },
   {
     "L3MON4D3/LuaSnip",
     dependencies = { "rafamadriz/friendly-snippets" },
+  },
+  {
+    "windwp/nvim-ts-autotag",
+    ft = { "html", "javascript", "typescript", "javascriptreact", "typescriptreact", "svelte", "astro" },
+    config = function()
+      require("nvim-ts-autotag").setup()
+    end,
   },
   {
     "nvim-treesitter/nvim-treesitter",
