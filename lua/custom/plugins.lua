@@ -2,6 +2,16 @@ local overrides = require "custom.configs.overrides"
 
 local plugins = {
   {
+    "ojroques/nvim-osc52",
+    config = function()
+      require("osc52").setup()
+    end,
+  },
+  {
+    "christoomey/vim-tmux-navigator",
+    lazy = false,
+  },
+  {
     "zbirenbaum/copilot.lua",
     cmd = "Copilot",
     event = "InsertEnter",
